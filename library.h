@@ -1,0 +1,6 @@
+#ifndef TEST_LIBRARIES_LIBRARY_H
+#define TEST_LIBRARIES_LIBRARY_H
+
+void hello (void);
+
+#endif //TEST_LIBRARIES_LIBRARY_H
