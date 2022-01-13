@@ -1,4 +1,4 @@
-# Install script for directory: /home/ben/test_libraries
+# Install script for directory: /home/ben/CLionProjects/Libraries
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ben/test_libraries/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ben/CLionProjects/Libraries/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
