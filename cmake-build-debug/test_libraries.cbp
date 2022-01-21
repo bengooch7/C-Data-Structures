@@ -76,10 +76,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ben/CLionProjects/Libraries/library.c">
-			<Option target="test_libraries"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/Libraries/library.h">
+		<Unit filename="/home/ben/CLionProjects/Libraries/server.c">
 			<Option target="test_libraries"/>
 		</Unit>
 		<Unit filename="/home/ben/CLionProjects/Libraries/CMakeLists.txt">
