@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test_libraries.dir/server.c.o"
-  "CMakeFiles/test_libraries.dir/server.c.o.d"
+  "CMakeFiles/test_libraries.dir/library.c.o"
+  "CMakeFiles/test_libraries.dir/library.c.o.d"
   "libtest_libraries.a"
   "libtest_libraries.pdb"
 )

@@ -1,2 +1,2 @@
-/usr/bin/ar qc libtest_libraries.a CMakeFiles/test_libraries.dir/server.c.o
+/usr/bin/ar qc libtest_libraries.a CMakeFiles/test_libraries.dir/library.c.o
 /usr/bin/ranlib libtest_libraries.a

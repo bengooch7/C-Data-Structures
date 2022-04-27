@@ -12,36 +12,35 @@
  * This node holds a single signed integer for the sake of this exercise.
  * For real-world use it could point to another struct or a void pointer.
  */
-typedef struct llist_node llist_node;
+typedef struct llist_node llist_node_t;
 
 struct llist_node
 {
     void * data;
-    llist_node * next;
+    llist_node_t * next;
 };
 
 /*
  * This "overarching" struct is intended to encapsulate the nodes for both
- * the head and tail of the circularly linked list.
+ * the head and tail of the linked list.
  */
 typedef struct llist
 {
-    llist_node * head;
-    llist_node * tail;
-} llist;
+    llist_node_t * head;
+    llist_node_t * tail;
+} llist_t;
 
-// Circularly Linked List Methods to implement
 
-/* llist_new() creates a new circularly linked list
+/* llist_new() creates a new linked list
     Args:
         No arguments
     Return:
-        llist * to a newly allocated circularly linked list.
+        llist * to a newly allocated linked list.
 */
-llist *
+llist_t *
 llist_new(void);
 
-/* llist_add() adds to existing circularly linked list
+/* llist_add() adds to existing linked list
     Args:
         llist * list : the llist* to add the element to
         void * data  : the specific data element to add
@@ -49,54 +48,54 @@ llist_new(void);
         bool: true on success, false on failure
 */
 bool
-llist_add(llist *list, void * data);
+llist_add(llist_t *list, void * data);
 
-/* llist_find() searches a circularly linked list for the first occurance of a given value
+/* llist_find() searches a linked list for the first occurance of a given value
     Args:
         llist * list : the llist* to find the element in
         void * data  : the specific data element to find
     Return:
         llist_node* of the found node. null if node not found.
 */
-llist_node *
-llist_find(llist *list, void * data, int (*comp_f)(const void *, const void *));
+llist_node_t *
+llist_find(llist_t *list, void * data, int (*comp_f)(const void *, const void *));
 
-/* llist_rm_head() removes only the head of a circularly linked list
+/* llist_rm_head() removes only the head of a linked list
     Args:
         llist * list : the llist* to remove the head from
     Return:
         llist_node* of the removed head. null if list is empty.
 */
-llist_node *
-llist_rm_head(llist *list);
+llist_node_t *
+llist_rm_head(llist_t *list);
 
-/* llist_rm_tail() removes only the tail of a circularly linked list
+/* llist_rm_tail() removes only the tail of a linked list
     Args:
         llist * list : the llist* to remove the tail from
     Return:
         llist_node* of the removed tail. null if list is empty.
 */
-llist_node *
-llist_rm_tail(llist *list);
+llist_node_t *
+llist_rm_tail(llist_t *list);
 
-/* llist_rm() removes from existing circularly linked list
+/* llist_rm() removes from existing linked list
     Args:
         llist * list : the llist* to remove the element from
-         void * data     : the specific data element to remove
+         void * data : the specific data element to remove
     Return:
         llist_node* of the removed node. null if node not found.
 */
-llist_node *
-llist_rm(llist * list, void * data, int (*comp_f)(const void *, const void *));
+llist_node_t *
+llist_rm(llist_t * list, void * data, int (*comp_f)(const void *, const void *));
 
-/* llist_destroy() destroys a circularly linked list
+/* llist_destroy() destroys a linked list
     Args:
         llist *list : llist * to destroy
     Return:
         bool : true on success, false of failure
 */
 bool
-llist_destroy(llist *list);
+llist_destroy(llist_t *list);
 
 
 /***
@@ -109,7 +108,7 @@ llist_destroy(llist *list);
  * value < 0 if item_b is larger
  */
 int
-ll_comp_str(void * item_a, void * item_b);
+ll_comp_str(const void * item_a, const void * item_b);
 
 
 /***
@@ -119,7 +118,7 @@ ll_comp_str(void * item_a, void * item_b);
  * @return -1 if not equal, 0 if equal
  */
 int
-ll_comp_int(void * int_a, void * int_b);
+ll_comp_int(const void * int_a, const void * int_b);
 
 
 /***
@@ -129,7 +128,7 @@ ll_comp_int(void * int_a, void * int_b);
  * @return -1 if not equal, 0 if equal
  */
 int
-ll_comp_uint(void * uint_a, void * uint_b);
+ll_comp_uint(const void * uint_a, const void * uint_b);
 
 
 /***
@@ -138,7 +137,7 @@ ll_comp_uint(void * uint_a, void * uint_b);
  * @param p_list The linked list to be represented visually
  */
 void
-print_list(llist * p_list);
+print_list(llist_t * p_list);
 
 
 #endif

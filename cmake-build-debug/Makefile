@@ -129,29 +129,29 @@ test_libraries/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_libraries.dir/build.make CMakeFiles/test_libraries.dir/build
 .PHONY : test_libraries/fast
 
-server.o: server.c.o
-.PHONY : server.o
+library.o: library.c.o
+.PHONY : library.o
 
 # target to build an object file
-server.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_libraries.dir/build.make CMakeFiles/test_libraries.dir/server.c.o
-.PHONY : server.c.o
+library.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_libraries.dir/build.make CMakeFiles/test_libraries.dir/library.c.o
+.PHONY : library.c.o
 
-server.i: server.c.i
-.PHONY : server.i
+library.i: library.c.i
+.PHONY : library.i
 
 # target to preprocess a source file
-server.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_libraries.dir/build.make CMakeFiles/test_libraries.dir/server.c.i
-.PHONY : server.c.i
+library.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_libraries.dir/build.make CMakeFiles/test_libraries.dir/library.c.i
+.PHONY : library.c.i
 
-server.s: server.c.s
-.PHONY : server.s
+library.s: library.c.s
+.PHONY : library.s
 
 # target to generate assembly for a file
-server.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_libraries.dir/build.make CMakeFiles/test_libraries.dir/server.c.s
-.PHONY : server.c.s
+library.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_libraries.dir/build.make CMakeFiles/test_libraries.dir/library.c.s
+.PHONY : library.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test_libraries"
-	@echo "... server.o"
-	@echo "... server.i"
-	@echo "... server.s"
+	@echo "... library.o"
+	@echo "... library.i"
+	@echo "... library.s"
 .PHONY : help
 
 

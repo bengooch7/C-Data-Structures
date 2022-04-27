@@ -69,28 +69,28 @@ include CMakeFiles/test_libraries.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test_libraries.dir/flags.make
 
-CMakeFiles/test_libraries.dir/server.c.o: CMakeFiles/test_libraries.dir/flags.make
-CMakeFiles/test_libraries.dir/server.c.o: ../server.c
-CMakeFiles/test_libraries.dir/server.c.o: CMakeFiles/test_libraries.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/Libraries/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_libraries.dir/server.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_libraries.dir/server.c.o -MF CMakeFiles/test_libraries.dir/server.c.o.d -o CMakeFiles/test_libraries.dir/server.c.o -c /home/ben/CLionProjects/Libraries/server.c
+CMakeFiles/test_libraries.dir/library.c.o: CMakeFiles/test_libraries.dir/flags.make
+CMakeFiles/test_libraries.dir/library.c.o: ../library.c
+CMakeFiles/test_libraries.dir/library.c.o: CMakeFiles/test_libraries.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/Libraries/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_libraries.dir/library.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/test_libraries.dir/library.c.o -MF CMakeFiles/test_libraries.dir/library.c.o.d -o CMakeFiles/test_libraries.dir/library.c.o -c /home/ben/CLionProjects/Libraries/library.c
 
-CMakeFiles/test_libraries.dir/server.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test_libraries.dir/server.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ben/CLionProjects/Libraries/server.c > CMakeFiles/test_libraries.dir/server.c.i
+CMakeFiles/test_libraries.dir/library.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test_libraries.dir/library.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ben/CLionProjects/Libraries/library.c > CMakeFiles/test_libraries.dir/library.c.i
 
-CMakeFiles/test_libraries.dir/server.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test_libraries.dir/server.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ben/CLionProjects/Libraries/server.c -o CMakeFiles/test_libraries.dir/server.c.s
+CMakeFiles/test_libraries.dir/library.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test_libraries.dir/library.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ben/CLionProjects/Libraries/library.c -o CMakeFiles/test_libraries.dir/library.c.s
 
 # Object files for target test_libraries
 test_libraries_OBJECTS = \
-"CMakeFiles/test_libraries.dir/server.c.o"
+"CMakeFiles/test_libraries.dir/library.c.o"
 
 # External object files for target test_libraries
 test_libraries_EXTERNAL_OBJECTS =
 
-libtest_libraries.a: CMakeFiles/test_libraries.dir/server.c.o
+libtest_libraries.a: CMakeFiles/test_libraries.dir/library.c.o
 libtest_libraries.a: CMakeFiles/test_libraries.dir/build.make
 libtest_libraries.a: CMakeFiles/test_libraries.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ben/CLionProjects/Libraries/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libtest_libraries.a"

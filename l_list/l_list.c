@@ -1,16 +1,16 @@
-#include "l_list.h"
+#include "../include/l"
 
 
 /* llist_new() creates a new linked list
     Args:
         No arguments
     Return:
-        llist * to a newly allocated linked list.
+        llist_t * to a newly allocated linked list.
 */
-llist *
+llist_t *
 llist_new(void)
 {
-    llist * p_new_llist = calloc(1, sizeof(llist));
+    llist_t * p_new_llist = calloc(1, sizeof(llist_t));
 
     p_new_llist->head = NULL;
     p_new_llist->tail = NULL;
@@ -20,13 +20,13 @@ llist_new(void)
 
 /* llist_add() adds to existing linked list
     Args:
-        llist * list : the llist* to add the element to
+        llist_t * list : the llist* to add the element to
         int data     : the specific data element to add
     Return:
         bool: true on success, false on failure
 */
 bool
-llist_add(llist * p_list, void * data)
+llist_add(llist_t * p_list, void * data)
 {
 
     if (!p_list)
@@ -35,7 +35,7 @@ llist_add(llist * p_list, void * data)
         return false;
     }
 
-    llist_node * p_new_node = calloc(1, sizeof(llist_node));
+    llist_node_t * p_new_node = calloc(1, sizeof(llist_node_t));
     if(!p_new_node)
     {
         fprintf(stderr, "\n%s: Failed to allocate for new node", __func__);
@@ -62,13 +62,15 @@ llist_add(llist * p_list, void * data)
 
 /* llist_find() searches a linked list for the first occurrence of a given value
     Args:
-        llist * list : the llist* to find the element in
+        llist_t * list : the llist* to find the element in
         int data     : the specific data element to find
+        comp_f       : the comparison function you want to use
+                        Valid options: ll_comp_str, ll_comp_int, ll_comp_uint
     Return:
-        llist_node* of the found node. null if node not found.
+        llist_node_t* of the found node. null if node not found.
 */
-llist_node *
-llist_find(llist * list, void * data, int (*comp_f)(const void *, const void *))
+llist_node_t *
+llist_find(llist_t * list, void * data, int (*comp_f)(const void *, const void *))
 {
     if (!list)
     {
@@ -82,7 +84,7 @@ llist_find(llist * list, void * data, int (*comp_f)(const void *, const void *))
         return NULL;
     }
 
-    llist_node * p_curr_node = list->head;
+    llist_node_t * p_curr_node = list->head;
 
     do
     {
@@ -103,12 +105,12 @@ llist_find(llist * list, void * data, int (*comp_f)(const void *, const void *))
 
 /* llist_rm_head() removes only the head of a linked list
     Args:
-        llist * list : the llist* to remove the head from
+        llist_t * list : the llist * to remove the head from
     Return:
-        llist_node* of the removed head. null if list is empty.
+        llist_node_t* of the removed head. null if list is empty.
 */
-llist_node *
-llist_rm_head(llist * list)
+llist_node_t *
+llist_rm_head(llist_t * list)
 {
     if (!list) //No list
     {
@@ -121,7 +123,7 @@ llist_rm_head(llist * list)
         return NULL;
     }
 
-    llist_node * old_head = list->head;
+    llist_node_t * old_head = list->head;
 
     if (!list->head->next) //Single node list
     {
@@ -137,12 +139,12 @@ llist_rm_head(llist * list)
 
 /* llist_rm_tail() removes only the tail of a linked list
     Args:
-        llist * list : the llist* to remove the tail from
+        llist_t * list : the llist* to remove the tail from
     Return:
-        llist_node* of the removed tail. null if list is empty.
+        llist_node_t* of the removed tail. null if list is empty.
 */
-llist_node *
-llist_rm_tail(llist * list)
+llist_node_t *
+llist_rm_tail(llist_t * list)
 {
     if (!list) //No list
     {
@@ -155,8 +157,8 @@ llist_rm_tail(llist * list)
         return NULL;
     }
 
-    llist_node * old_tail = list->tail;
-    llist_node * p_curr_node = list->head;
+    llist_node_t * old_tail = list->tail;
+    llist_node_t * p_curr_node = list->head;
 
     while (p_curr_node->next != list->tail)
     {
@@ -170,13 +172,13 @@ llist_rm_tail(llist * list)
 
 /* llist_rm() removes from existing linked list
     Args:
-        llist * list : the llist* to remove the element from
+        llist_t * list : the llist* to remove the element from
         int data     : the specific data element to remove
     Return:
-        llist_node* of the removed node. null if node not found.
+        llist_node_t* of the removed node. null if node not found.
 */
-llist_node *
-llist_rm (llist * p_list, void * data,
+llist_node_t *
+llist_rm (llist_t * p_list, void * data,
          int (*comp_f)(const void *, const void *))
 {
     if (!p_list)
@@ -190,8 +192,8 @@ llist_rm (llist * p_list, void * data,
         return NULL;
     }
 
-    llist_node * p_curr_node = p_list->head;
-    llist_node * p_prev_node = NULL;
+    llist_node_t * p_curr_node = p_list->head;
+    llist_node_t * p_prev_node = NULL;
 
     do
     {
@@ -239,12 +241,12 @@ llist_rm (llist * p_list, void * data,
 
 /* llist_destroy() destroys a linked list
     Args:
-        llist *list : llist * to destroy
+        llist_t * list : llist * to destroy
     Return:
         bool : true on success, false of failure
 */
 bool
-llist_destroy(llist * p_list)
+llist_destroy(llist_t * p_list)
 {
     if (!p_list) //No list
     {
@@ -260,7 +262,7 @@ llist_destroy(llist * p_list)
 
     while (p_list->head)
     {
-        llist_node * p_old_head = llist_rm_head(p_list);
+        llist_node_t * p_old_head = llist_rm_head(p_list);
         free(p_old_head);
         p_old_head = NULL;
     }
@@ -282,7 +284,7 @@ llist_destroy(llist * p_list)
  * value < 0 if item_b is larger
  */
 int
-ll_comp_str(void * item_a, void * item_b)
+ll_comp_str(const void * item_a, const void * item_b)
 {
     if ((!item_a) || (!item_b))
     {
@@ -308,7 +310,7 @@ ll_comp_str(void * item_a, void * item_b)
  * @return -1 if not equal, 0 if equal
  */
 int
-ll_comp_int(void * int_a, void * int_b)
+ll_comp_int(const void * int_a, const void * int_b)
 {
     if ((int *) int_a != (int *) int_b)
     {
@@ -326,7 +328,7 @@ ll_comp_int(void * int_a, void * int_b)
  * @return -1 if not equal, 0 if equal
  */
 int
-ll_comp_uint(void * uint_a, void * uint_b)
+ll_comp_uint(const void * uint_a, const void * uint_b)
 {
     if ((uint32_t *) uint_a != (uint32_t *) uint_b)
     {
@@ -343,7 +345,7 @@ ll_comp_uint(void * uint_a, void * uint_b)
  * @param p_list The linked list to be represented visually
  */
 void
-print_list(llist * p_list)
+print_list(llist_t * p_list)
 {
     if (!p_list)
     {
@@ -351,14 +353,14 @@ print_list(llist * p_list)
         return;
     }
 
-    printf("\nLinked list:\n|--[");
+    printf("|--[");
 
     if (!p_list->head)
     {
         printf(" Empty list ");
     }
 
-    llist_node * p_curr_node = p_list->head;
+    llist_node_t * p_curr_node = p_list->head;
 
     while (p_curr_node)
     {
@@ -370,7 +372,7 @@ print_list(llist * p_list)
         p_curr_node = p_curr_node->next;
     }
 
-    printf("]--|\n\nEnd of list\n");
+    printf("]--|\n");
 }
 
 

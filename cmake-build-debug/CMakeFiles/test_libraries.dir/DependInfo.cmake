@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ben/CLionProjects/Libraries/server.c" "CMakeFiles/test_libraries.dir/server.c.o" "gcc" "CMakeFiles/test_libraries.dir/server.c.o.d"
+  "/home/ben/CLionProjects/Libraries/library.c" "CMakeFiles/test_libraries.dir/library.c.o" "gcc" "CMakeFiles/test_libraries.dir/library.c.o.d"
   )
 
 # Targets to which this target links.
