@@ -1,3 +1,0 @@
-/home/ben/CLionProjects/Libraries/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/ben/CLionProjects/Libraries/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ben/CLionProjects/Libraries/cmake-build-debug/CMakeFiles/test_libraries.dir
