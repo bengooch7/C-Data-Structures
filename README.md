@@ -12,3 +12,7 @@ This repository was created as a backup of code I had written when learning the 
 Each data structure was written to satisfy a test suite provided to me by a co-worker and there are likely edge cases and errors that were not caught at the time.
 
 *Disclaimer*: This repository should only be used as a reference.
+
+
+## Students
+If you are a student just learning the C Programming language or general computer science, don't lean on these as fool-proof implementations.
